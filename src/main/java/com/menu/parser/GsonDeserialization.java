@@ -6,21 +6,15 @@ import com.google.gson.Gson;
 import com.menu.models.MenuContent;
 
 public class GsonDeserialization {
-	private MenuContent mc;
 
-	public GsonDeserialization() {
-		super();
+	public static MenuContent getMenuContent(String path) {
 		Gson gson = new Gson();
 		try {
-			mc = gson.fromJson(new FileReader("input/ServiceMenu.json"), MenuContent.class);
+			return gson.fromJson(new FileReader(path), MenuContent.class);
 		}catch(Exception e) {
 			e.printStackTrace();
 		}
-		
+		throw new RuntimeException();
 	}
 
-	public MenuContent getMc() {
-		return mc;
-	}
-	
 }
