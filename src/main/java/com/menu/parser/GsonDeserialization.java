@@ -10,6 +10,7 @@ public class GsonDeserialization {
 	public static MenuContent getMenuContent(String path) {
 		Gson gson = new Gson();
 		try {
+			System.out.println("Json deserialized");
 			return gson.fromJson(new FileReader(path), MenuContent.class);
 		}catch(Exception e) {
 			e.printStackTrace();

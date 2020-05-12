@@ -71,6 +71,7 @@ public class ExcelWriter {
 			workbook.write(fileOut);
 			fileOut.close();
 			workbook.close();
+			System.out.println("Excel file writed");
 		} catch (Exception ex) {
 			ex.printStackTrace();
 		}
